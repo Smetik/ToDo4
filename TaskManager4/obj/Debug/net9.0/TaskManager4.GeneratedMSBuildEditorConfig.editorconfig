@@ -28,3 +28,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/sergey/RiderProjects/TaskManager4/TaskManager4/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/sergey/RiderProjects/TaskManager4/TaskManager4/Views/TaskEditorView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

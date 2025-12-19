@@ -1,19 +1,58 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:TaskManager4.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:views="using:TaskManager4.Views"
         x:Class="TaskManager4.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="TaskManager4">
+        Width="600"
+        Height="400"
+        Title="Список задач">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    <ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.DataTemplates>
 
-    
+            <!-- Главная страница -->
+            <DataTemplate DataType="vm:MainWindowViewModel">
+                <StackPanel Margin="10">
+
+                    <ListBox ItemsSource="{Binding Tasks}"
+                             SelectedItem="{Binding SelectedTask}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="5">
+                                    <TextBlock Text="{Binding Title}"
+                                               FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Description}"/>
+                                    <CheckBox Content="Выполнено"
+                                              IsChecked="{Binding IsDone}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <StackPanel Orientation="Horizontal"
+                                Margin="0,10,0,0"
+                                HorizontalAlignment="Center"
+                                Spacing="10">
+                        <Button Content="Создать"
+                                Width="77"
+                                Command="{Binding CreateCommand}"/>
+                        <Button Content="Редактировать"
+                                Width="122"
+                                Command="{Binding EditCommand}"/>
+                        <Button Content="Удалить"
+                                Width="77"
+                                Command="{Binding DeleteCommand}"/>
+                    </StackPanel>
+
+                </StackPanel>
+            </DataTemplate>
+
+            <!-- Страница редактора -->
+            <DataTemplate DataType="vm:TaskEditorViewModel">
+                <views:TaskEditorView/>
+            </DataTemplate>
+
+        </ContentControl.DataTemplates>
+    </ContentControl>
 </Window>
