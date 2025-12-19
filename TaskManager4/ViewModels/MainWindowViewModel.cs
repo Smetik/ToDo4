@@ -52,11 +52,24 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private void Edit()
     {
-        if (SelectedTask == null)
-            return;
+        var original = SelectedTask;
 
-        CurrentViewModel = new TaskEditorViewModel(SelectedTask, _ =>
+        var copy = new TodoTask
         {
+            Title = original.Title,
+            Description = original.Description,
+            IsDone = original.IsDone
+        };
+
+        CurrentViewModel = new TaskEditorViewModel(copy, saved =>
+        {
+            if (saved)
+            {
+                original.Title = copy.Title;
+                original.Description = copy.Description;
+                original.IsDone = copy.IsDone;
+            }
+
             CurrentViewModel = this;
         });
     }
