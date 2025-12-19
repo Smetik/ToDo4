@@ -1,0 +1,2 @@
+/Users/sergey/RiderProjects/TaskManager4/TaskManager4/bin/Release/net9.0/win-x64/publish/TaskManager4.pdb
+/Users/sergey/RiderProjects/TaskManager4/TaskManager4/bin/Release/net9.0/win-x64/publish/TaskManager4.exe
