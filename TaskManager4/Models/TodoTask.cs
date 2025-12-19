@@ -1,4 +1,4 @@
-namespace TaskManager1._3.Models;
+namespace TaskManager4.Models;
 
 using CommunityToolkit.Mvvm.ComponentModel;
 

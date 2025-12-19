@@ -72,3 +72,4 @@
 /Users/sergey/RiderProjects/TaskManager4/TaskManager4/obj/Debug/net9.0/TaskManager4.pdb
 /Users/sergey/RiderProjects/TaskManager4/TaskManager4/obj/Debug/net9.0/TaskManager4.genruntimeconfig.cache
 /Users/sergey/RiderProjects/TaskManager4/TaskManager4/obj/Debug/net9.0/ref/TaskManager4.dll
+/Users/sergey/RiderProjects/TaskManager4/TaskManager4/obj/Debug/net9.0/TaskManager4.sourcelink.json
