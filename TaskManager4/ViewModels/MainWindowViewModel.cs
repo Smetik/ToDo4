@@ -42,9 +42,10 @@ public partial class MainWindowViewModel : ViewModelBase
 
         CurrentViewModel = new TaskEditorViewModel(task, saved =>
         {
-            if (saved)
+            if (saved && !string.IsNullOrWhiteSpace(task.Title))
+            {
                 Tasks.Add(task);
-
+            }
             CurrentViewModel = this;
         });
     }

@@ -5,10 +5,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 public partial class TodoTask : ObservableObject
 {
     [ObservableProperty]
-    private string title = "";
+    private string title = string.Empty;
 
     [ObservableProperty]
-    private string description = "";
+    private string description = string.Empty;
 
     [ObservableProperty]
     private bool isDone;
